@@ -99,10 +99,10 @@ int main(void)
 	  //LED2 -> PB15	(RED)
 	  //========================================//
 
-	  GPIOB->BSRR = (1 << 12) | (1 << 15);						//GPIO SET
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12 | GPIO_PIN_15, GPIO_PIN_SET);
 	  HAL_Delay(20);
 
-	  GPIOB->BSRR = (1 << (12 + SIZE)) | (1 << (15 + SIZE));	// GPIO RESET
+	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12 | GPIO_PIN_15, GPIO_PIN_RESET);
 	  HAL_Delay(80);
     /* USER CODE END WHILE */
 
